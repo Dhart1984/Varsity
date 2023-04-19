@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,12 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
 
 </head>
 
-<body>
+<body class="bg">
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper  green darken-2">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
@@ -22,9 +26,9 @@
             </form>
         </div>
     </nav>
-    <header class="navbar-fixed">
+    <header class="navbar-fixed green darken-2">
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper  green accent-4">
                 <ul>
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Varsity</a></li>
 
@@ -32,6 +36,7 @@
                 <ul class="right">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="/about">About</a></li>
+                    <li><a href="/players">All Players</a></li>
                 </ul>
             </div>
         </nav>
@@ -40,7 +45,7 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer green accent-2">
         <div>All Rights Reserved, &copy; 2023 Varsity &nbsp;</div>
     </footer>
 
