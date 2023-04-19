@@ -16,7 +16,7 @@
 
 <body class="bg">
     <nav>
-        <div class="nav-wrapper  green darken-2">
+        <div class="nav-wrapper  green accent-3">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
@@ -26,17 +26,18 @@
             </form>
         </div>
     </nav>
-    <header class="navbar-fixed green darken-2">
+    <header class="navbar-fixed green accent-2">
         <nav>
-            <div class="nav-wrapper  green accent-4">
+            <div class="nav-wrapper  green accent-3">
                 <ul>
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Varsity</a></li>
 
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/players">All Players</a></li>
+                   
+                    <li><a href="{% url 'players_create' %}">Add Player</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'index' %}">All Players</a></li>
                 </ul>
             </div>
         </nav>
