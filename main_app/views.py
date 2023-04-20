@@ -24,7 +24,7 @@ class PlayerCreate(CreateView):
 
 class PlayerUpdate(UpdateView):
     model = Player
-    fields = ['name', 'age', 'team',]
+    fields = ['name', 'age', 'schedule',]
 
 class PlayerDelete(DeleteView):
     model = Player
