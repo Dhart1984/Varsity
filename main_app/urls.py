@@ -9,5 +9,5 @@ urlpatterns = [
     path('players/create/', views.PlayerCreate.as_view(), name='players_create'),
     path('players/<int:pk>/update/', views.PlayerUpdate.as_view(), name='players_update'),
     path('players/<int:pk>/delete/', views.PlayerDelete.as_view(), name='players_delete'),
-    path('players/<int:player_id>/add_sport/', views.add_sport, name='add_sport'),
+    path('players/<int:player_id>/add_schedule/', views.add_schedule, name='add_schedule'),
 ]

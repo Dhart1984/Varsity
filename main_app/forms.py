@@ -1,9 +1,9 @@
 # forms.py
 
 from django.forms import ModelForm
-from .models import Sport
+from .models import Schedule
 
-class SportForm(ModelForm):
+class ScheduleForm(ModelForm):
   class Meta:
-    model = Sport
-    fields = ['sports', "date"]
+    model = Schedule
+    fields = ['date', 'event']

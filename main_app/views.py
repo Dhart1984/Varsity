@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from.models import Player
-from .forms import SportForm
+from .forms import ScheduleForm
 
 
 # Create your views here.
@@ -20,19 +20,20 @@ def players_index(request):
 
 def players_detail(request, player_id):
   player = Player.objects.get(id=player_id)
-  sport_form = SportForm()
-  return render(request, 'players/detail.html', { 'player': player, 'sport_form' : sport_form})
+  schedule_form = ScheduleForm()
+  print (player)
+  return render(request, 'players/detail.html', { 'player': player, 'schedule_form' : schedule_form})
 
-def add_sport(request, player_id):
+def add_schedule(request, player_id):
   # create a ModelForm instance using the data in request.POST
-  form = SportForm(request.POST)
+  form = ScheduleForm(request.POST)
   # validate the form
   if form.is_valid():
     # don't save the form to the db until it
     # has the cat_id assigned
-    new_sport = form.save(commit=False)
-    new_sport.player_id = player_id
-    new_sport.save()
+    new_schedule = form.save(commit=False)
+    new_schedule.player_id = player_id
+    new_schedule.save()
     return redirect('detail', player_id=player_id)
 
 
@@ -43,7 +44,7 @@ class PlayerCreate(CreateView):
 
 class PlayerUpdate(UpdateView):
     model = Player
-    fields = ['name', 'age', 'schedule',]
+    fields = ['name', 'age', 'lifetime_ba',]
 
 class PlayerDelete(DeleteView):
     model = Player
