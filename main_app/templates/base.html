@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,12 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
 </head>
 
-<body>
+<body class="bg">
+    
+    <style>
+        body {
+            background-image: url('https://create.vista.com/unlimited/stock-photos/35886951/stock-photo-baseball-in-the-infield/') ;
+        }
+    </style>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper  green accent-3">
             <form>
                 <div class="input-field">
                     <input id="search" type="search" required>
@@ -22,25 +33,28 @@
             </form>
         </div>
     </nav>
-    <header class="navbar-fixed">
+    <header class="navbar-fixed green accent-2">
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper  green accent-3">
                 <ul>
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Varsity</a></li>
 
                 </ul>
                 <ul class="right">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="/about">About</a></li>
+                   
+                    <li><a href="{% url 'players_create' %}">Add Player</a></li>
+                    <li><a href="{% url 'about' %}">League Finder</a></li>
+                    <li><a href="{% url 'index' %}">All Players</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container">
         {% block content %}
+       
         {% endblock %}
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer green accent-2">
         <div>All Rights Reserved, &copy; 2023 Varsity &nbsp;</div>
     </footer>
 

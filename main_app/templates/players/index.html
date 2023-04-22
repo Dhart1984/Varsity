@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Player List</h1>
+
+
+{% for player in players %}
+<!-- old one below  -->
+  <div class="card">
+    <a href="{% url 'detail' player.id %}"></a>
+    <div class="card-content">
+      <span class="card-title">{{ player.name }}</span>
+      <p>Age: {{ player.age }}</p>
+      <p>LifeTimeBA: {{ player.lifetime_ba }}</p>
+     
+      
+    </div>
+    </a>
+    <div class="card-action">
+        <a href="{% url 'players_update' player.id %}">Edit</a>
+        <a href="{% url 'players_delete' player.id %}">Delete</a>
+      </div>
+      
+  </div>
+{% endfor %}
+
+{% endblock %}
