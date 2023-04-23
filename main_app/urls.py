@@ -10,4 +10,6 @@ urlpatterns = [
     path('players/<int:pk>/update/', views.PlayerUpdate.as_view(), name='players_update'),
     path('players/<int:pk>/delete/', views.PlayerDelete.as_view(), name='players_delete'),
     path('players/<int:player_id>/add_schedule/', views.add_schedule, name='add_schedule'),
+    path('accounts/signup/', views.signup, name='signup'),
+   
 ]
