@@ -6,11 +6,7 @@
 <div class="row">
   <div class="col s6">
 
-    <form action="{% url 'add_schedule' player.id %}" method="POST">
-      {% csrf_token %}
-      {{ sport_form.as_p }}
-      <input type="submit" class="btn" value="Add Feeding">
-    </form>
+ 
 
 
     <div class="card">
@@ -36,7 +32,7 @@
       {% csrf_token %}
       <!-- Render the inputs -->
       {{ schedule_form.as_p }}
-      <input type="submit" class="btn" value="Add Sports">
+      <input type="submit" class="btn" value="Add Game or Practice">
     </form>
 
 
