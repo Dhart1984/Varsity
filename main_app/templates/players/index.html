@@ -7,12 +7,12 @@
 {% for player in players %}
 <!-- old one below  -->
   <div class="card">
-    <a href="{% url 'detail' player.id %}"></a>
+    <a href="{% url 'detail' player.id %}">
     <div class="card-content">
-      <span class="card-title">{{ player.name }}</span>
+      <span class="card-title">{{ player.name }}</span> </a>
       <p>Age: {{ player.age }}</p>
       <p>LifeTimeBA: {{ player.lifetime_ba }}</p>
-     
+   
       
     </div>
     </a>
